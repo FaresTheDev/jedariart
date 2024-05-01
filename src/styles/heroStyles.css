@@ -1,0 +1,248 @@
+.hero-wrapper {
+    background-color: var(--sky-background-color);
+    width: 100%;
+    /* the 87vh height for the header */
+    height: 87vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero-container {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .left-section {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 0 10%;
+  }
+  
+  .statements {
+    font-size: 40px;
+    font-family: katibeh;
+    line-height: 47px;
+    font-weight: lighter;
+  }
+  
+  .statements > b {
+    background-image: linear-gradient(var(--sky-color));
+    background-repeat: no-repeat;
+    background-size: 10px 100%;
+    background-position: 0 0;
+    border-radius: 10px;
+    padding: 0 8px;
+    animation: heighlighter-animation 1s 0.5s ease-in-out forwards;
+  }
+  
+  @keyframes heighlighter-animation {
+    0% {
+      background-image: linear-gradient(var(--sky-color), var(--sky-color));
+      background-size: 0 100%;
+      background-position: 0 0;
+    }
+    100% {
+      background-image: linear-gradient(var(--sky-color), var(--sky-color));
+      background-size: 100% 100%;
+      background-position: 100% 0;
+    }
+  }
+  
+  .call-to-action-btn {
+    font-size: 40px;
+    font-style: italic;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: karma;
+    font-weight: 700;
+    margin-top: 100px;
+    transition: 0.25s ease-in-out;
+    pointer-events: none;
+  }
+  
+  /* removed the hover animation until the gallery page is ready */
+  /* .call-to-action-btn:hover {
+    color: var(--orange-color);
+    letter-spacing: 1px;
+  } */
+  
+  .right-section {
+    width: 50%;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: 400px 400px 400px 400px;
+    img {
+      border-radius: 15px;
+    }
+  }
+  
+  .project-one-photo {
+    width: 500px;
+    grid-row: 2;
+    grid-column: 1;
+    border: 5px solid var(--sky-color);
+    transition: 0.4s ease-in-out;
+  }
+  
+  .project-one-photo:hover,
+  .project-two-photo:hover,
+  .project-three-photo:hover {
+    transform: scale(1.2);
+  }
+  
+  .project-two-photo {
+    margin-top: 50px;
+    width: 500px;
+    height: 600px;
+    grid-row: 2;
+    grid-column: 2;
+    border: 5px solid var(--sun-color);
+    transition: 0.3s ease-in-out;
+  }
+  
+  .project-three-photo {
+    margin-top: 100px;
+    width: 400px;
+    grid-row: 2;
+    grid-column: 3;
+    border: 5px solid var(--orange-color);
+    transition: 0.3s ease-in-out;
+  }
+  
+  /* media querry */
+  @media (max-width: 1920px) {
+    .hero-wrapper {
+      height: 88vh;
+    }
+  
+    .statements {
+      font-size: 38px;
+      line-height: 44px;
+    }
+  
+    .call-to-action-btn {
+      font-size: 30px;
+      margin-top: 80px;
+    }
+  
+    .right-section {
+      width: 80%;
+      padding-right: 20px;
+      grid-template-columns: 250px 250px 250px;
+      img {
+        border-radius: 15px;
+      }
+    }
+  
+    .project-one-photo {
+      width: 400px;
+    }
+  
+    .project-two-photo {
+      margin-top: 40px;
+      width: 400px;
+      height: 500px;
+    }
+  
+    .project-three-photo {
+      margin-top: 80px;
+      width: 300px;
+    }
+  }
+  
+  
+  /* Medaia querry for phones */
+  @media (max-width: 480px) {
+    .hero-wrapper {
+      width: 100%;
+      /* the 91vh height for the header */
+      height: 91vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .hero-container {
+      width: 100%;
+      height: 90%;
+      padding: 10px;
+      flex-direction: column;
+    }
+    
+    .left-section {
+      width: 100%;
+      height: 50%;
+      text-align: center;
+      margin: 0;
+    }
+    
+    .statements {
+      height: fit-content;
+      font-size: 24px;
+      line-height: 27px;
+    }
+    
+    .statements > b {
+      padding: 0 3px;
+    }
+    
+    @keyframes heighlighter-animation {
+      0% {
+        background-image: linear-gradient(var(--sky-color), var(--sky-color));
+        background-size: 0 90%;
+        background-position: 0 0;
+      }
+      100% {
+        background-image: linear-gradient(var(--sky-color), var(--sky-color));
+        background-size: 100% 97%;
+        background-position: 100% 0;
+      }
+    }
+    
+    .call-to-action-btn {
+      width: 100%;
+      font-size: 20px;
+      margin-top: 50px;
+      text-align: center;
+    }
+    
+    .right-section {
+      width: 100%;
+      height: 100%;
+      grid-template-columns: 120px 120px;
+    }
+    
+    .project-one-photo {
+      width: 200px;
+      border: 3px solid var(--sky-color);
+    }
+    
+   
+    .project-two-photo {
+      margin-top: 10px;
+      width: 190px;
+      height: 270px;
+      border: 3px solid var(--sun-color);
+    }
+    
+    .project-three-photo {
+      margin-top: 30px;
+      width: 170px;
+      border: 3px solid var(--orange-color);
+    } 
+    
+    .project-one-photo:hover,
+    .project-two-photo:hover,
+    .project-three-photo:hover {
+      transform: scale(1.1);
+    }
+    
+  }
