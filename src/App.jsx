@@ -144,12 +144,14 @@ function App() {
               <div className="input-fields">
                 <input
                   type="text"
+                  required
                   value={name}
                   placeholder="Your name"
                   onChange={(e) => setName(e.target.value)}
                 />
                 <input
                   type="email"
+                  required
                   value={email}
                   placeholder="Your email"
                   onChange={(e) => setEmail(e.target.value)}
