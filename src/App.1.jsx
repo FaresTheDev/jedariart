@@ -1,25 +1,18 @@
-import "./styles/App.css";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
-// header imports
 import jedariartLogo from "./assets/images/JedariartLogo.png";
-// Hero imports
-import "./styles/heroStyles.css";
 import ProjectOnePhoto from "./assets/images/project-one-photo.png";
 import ProjectTwoPhoto from "./assets/images/project-two-photo.png";
 import ProjectThreePhoto from "./assets/images/project-three-photo.png";
-// AboutUs imports
-import "./styles/aboutUsStyles.css";
 import WorkInProg1 from "./assets/images/WorkInProg1.jpg";
 import WorkInProg2 from "./assets/images/WorkInProg2.jpg";
 import WorkInProg3 from "./assets/images/WorkInProg3.jpg";
 import WorkInProg4 from "./assets/images/WorkInProg4.png";
-// Contact imports
-import "./styles/contactStyles.css";
 import girliRose from "./assets/images/Girli-rose.jpg";
 import gym from "./assets/images/gym.jpg";
 import teaCupGirl from "./assets/images/tea-cup-girl.jpg";
-function App() {
+
+export function App() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -55,21 +48,6 @@ function App() {
   };
 
   // check if the form fields are empty
-  function isValid() {
-    const submitButton = document.getElementById("submit-button");
-    if (
-      document.getElementById("name").value.length > 0 &&
-      document.getElementById("email").value.length > 0
-    ) {
-      submitButton.disabled = false;
-      submitButton.classList.remove("no-hover");
-      console.log("button is NOT disabled");
-    } else {
-      submitButton.disabled = true;
-      submitButton.classList.add("no-hover");
-      console.log("button is disabled");
-    }
-  }
   return (
     <>
       <div className="header">
@@ -162,25 +140,17 @@ function App() {
               <div className="input-fields">
                 <input
                   type="text"
-                  id="name"
                   required
                   value={name}
                   placeholder="Your name"
-                  onChange={(e) => {
-                    setName(e.target.value);
-                    isValid();
-                  }}
+                  onChange={(e) => setName(e.target.value)}
                 />
                 <input
                   type="email"
-                  id="email"
                   required
                   value={email}
                   placeholder="Your email"
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                    isValid();
-                  }}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
                 <br />
                 <input
@@ -191,12 +161,7 @@ function App() {
                   onChange={(e) => setMessage(e.target.value)}
                 />
               </div>
-              <button
-                className="submit-button no-hover"
-                id="submit-button"
-                type="submit"
-                disabled
-              >
+              <button className="submit-button" type="submit" disabled>
                 Register your interest
               </button>
             </form>
@@ -272,5 +237,3 @@ function App() {
     </>
   );
 }
-
-export default App;
